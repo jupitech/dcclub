@@ -122,14 +122,17 @@
                             </form>
                       </div>
                    </div>
-                   <div class="col-sm-12 spd spi">
-                     <div class="col-sm-6 spd spi">
-                       <h5>Políticas de Compra</h5>
-                     </div>
-                     <div class="col-sm-6 spd spi">
-                       <h5>Términos y Condiciones</h5>
-                     </div>
+                   <div class="caja_footer">
+                   	 <div class="col-sm-12 spd spi">
+	                     <div class="col-sm-6 spd spi">
+	                       <h5>Políticas de Compra</h5>
+	                     </div>
+	                     <div class="col-sm-6 spd spi">
+	                       <h5>Términos y Condiciones</h5>
+	                     </div>
+	                   </div>
                    </div>
+	                  
                  </div>
                </div>
                <div role="tabpanel" class="tab-pane" id="cobrar">
