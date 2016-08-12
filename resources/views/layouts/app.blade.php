@@ -21,10 +21,11 @@
     --}}
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     {{--<link rel="stylesheet" type="text/css" href="{{ asset('assets/bower/bootstrap/dist/css/bootstrap.min.css') }}">--}}
+     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 </head>
-<body id="app-layout">
+<body id="app-layout" ng-app="DCApp">
 
 
        @yield('content')

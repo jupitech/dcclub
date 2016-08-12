@@ -71,4 +71,165 @@ body {
       text-rendering: optimizeLegibility;
       -webkit-font-feature-settings: "kern"; }
 
+.caja {
+  display: table;
+  width: 400px;
+  background: #fff;
+  margin: 120px auto 50px;
+  border-radius: 2px;
+  box-shadow: 1px 5px 10px 0 rgba(0, 0, 0, 0.1); }
+  .caja .nav-tabs {
+    border: none !important; }
+  .caja .nav-tabs > li {
+    float: left;
+    width: 100%; }
+    .caja .nav-tabs > li a {
+      background: #1b3043 !important;
+      color: #fff;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      letter-spacing: 0.03em;
+      font-size: 16px;
+      text-align: center;
+      border-left: none !important;
+      border-right: none !important;
+      border-top: none !important; }
+
+.caja .nav-tabs > li.active > a,
+.caja .nav-tabs > li.active > a:focus,
+.caja .nav-tabs > li.active > a:hover {
+  margin: 0 !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-top: none !important;
+  border-bottom: 2px solid #00aeeb;
+  color: #fff; }
+
+.caja_paquete {
+  float: left;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 15px 0; }
+  .caja_paquete h3 {
+    font-size: 24px;
+    margin-top: 25px; }
+  .caja_paquete h4 {
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    background: #8DCA3D;
+    font-size: 24px;
+    margin-top: 16px;
+    text-align: center;
+    font-weight: bold; }
+
+.ima_tuki {
+  float: left;
+  width: 100%;
+  height: 80px;
+  background: url("../img/tukix3.png") no-repeat center;
+  background-size: 70px; }
+
+.spd {
+  padding-right: 0 !important; }
+
+.spi {
+  padding-left: 0 !important; }
+
+.caja_tarjeta {
+  float: left;
+  width: 100%;
+  margin: 0 0 10px 0;
+  background: #F2F2F2;
+  padding: 10px;
+  border-radius: 5px; }
+  .caja_tarjeta .form-control {
+    border: none !important;
+    box-shadow: inset 0 1px 1px transparent;
+    padding: 10px 5px !important;
+    border-radius: 5px; }
+  .caja_tarjeta label {
+    margin-top: 8px; }
+  .caja_tarjeta .btn-default {
+    float: right;
+    margin: 5px 0;
+    border: none !important;
+    background: #00AFEC;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 15px; }
+
+.form_pago {
+  margin: 10px 0; }
+
+.monto {
+  margin: 5px 0 10px 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold; }
+
+.ico_tarjetas {
+  float: left;
+  margin: 5px 0;
+  padding: 5px;
+  width: 100%; }
+  .ico_tarjetas ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+  .ico_tarjetas li {
+    float: left;
+    width: 25%;
+    height: 30px; }
+
+.t_visa {
+  background: url("img/t_visa.png") no-repeat center;
+  background-size: 50px; }
+
+.t_master {
+  background: url("img/t_master.png") no-repeat center;
+  background-size: 50px; }
+
+.t_amer {
+  background: url("img/t_amer.png") no-repeat center;
+  background-size: 50px; }
+
+.t_debito {
+  background: url("img/t_debito.png") no-repeat center;
+  background-size: 50px; }
+
+.men_error {
+  float: left;
+  width: 100%;
+  margin: 5px 0; }
+  .men_error p {
+    float: left;
+    width: 100%;
+    background: rgba(241, 102, 33, 0.7);
+    border-radius: 5px;
+    padding: 3px 10px;
+    font-size: 12px;
+    color: #fff !important;
+    margin: 0 0 2px 0;
+    font-family: Bariol;
+    letter-spacing: 0.04em; }
+
+@media (max-width: 467px) {
+  .container {
+    padding: 0 !important; }
+  .caja {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0; }
+  .caja_paquete h3 {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px; } }
+
 /*# sourceMappingURL=app.css.map */
