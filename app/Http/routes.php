@@ -17,3 +17,5 @@ Route::get('/', function () {
 Route::get('/checkin', function () {
     return view('checkin');
 });
+Route::get('api/checkin/user/{token}', 'CheckInController@indexuser');
+Route::get('api/checkin/paquete/{paquete}', 'CheckInController@indexpaquete');

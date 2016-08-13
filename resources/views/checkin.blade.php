@@ -19,32 +19,42 @@
                               <div class="ima_tuki"></div>
                             </div>
                             <div class="col-sm-6 col-xs-6">
-                              <h3>X 25</h3>
+                              <h3>X @{{mipaquete.tukis_paquete}}</h3>
                             </div>
                          </div>
                          <div class="col-sm-6 col-xs-6">
-                              <h4>$ 3.25</h4>
+                              <h4>$  @{{mipaquete.monto_dolar | number:2}}</h4>
                          </div>
                    </div>
                    <div class="caja_tarjeta">
                       <div class="col-sm-12">
-                        <p class="monto">Monto a pagar $3.25 (Q25.00)</p>
+                        <p class="monto">Monto a pagar $ @{{mipaquete.monto_dolar | number:2}}</p>
                       </div>
                       <div class="col-sm-12">
-                        <form class="form_pago form-horizontal" name="forma">
+                        <form class="form_pago form-horizontal" name="forma" >
+                        
                               <div class="form-group">
-                                <label for="exampleInputEmail1" class="col-sm-2">Nombre</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" name="nombreU" ng-model="usuario.nombre" placeholder="Nombre y Apellido" required>
-                                <div class="men_error" ng-show="forma.nombreU.$dirty && forma.nombreU.$invalid">
-                                    <p>El campo es obligatorio.</p>
-                                </div>
+                                <label for="exampleInputEmail1" class="col-xs-2 col-sm-2">Nombre</label>
+                                <div class="col-xs-10 col-sm-10">
+                                      <div class="col-xs-6 col-sm-6 spi">
+                                             <input type="text" class="form-control" name="nombreU" ng-model="midato.info_usuario.first_name" placeholder="Nombre" required>
+                                            <div class="men_error" ng-show="forma.nombreU.$dirty && forma.nombreU.$invalid">
+                                                <p>Requerido</p>
+                                            </div>
+                                      </div>
+                                      <div class="col-xs-6 col-sm-6 spd">
+                                               <input type="text" class="form-control" name="apellidoU" ng-model="midato.info_usuario.last_name" placeholder="Apellido" required>
+                                            <div class="men_error" ng-show="forma.apellidoU.$dirty && forma.apellidoU.$invalid">
+                                                <p>Requerido</p>
+                                            </div>
+                                      </div>
+                               
                                 </div>
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputEmail1" class="col-sm-2">Email</label>
-                                <div class="col-sm-10">
-                                <input type="email" class="form-control"  name="emailU" ng-model="usuario.email" placeholder="Correo Eletrónico" required>
+                                <label for="exampleInputEmail1" class="col-xs-2 col-sm-2">Email</label>
+                                <div class="col-xs-10 col-sm-10">
+                                <input type="email" class="form-control"  name="emailU" ng-model="midato.email" placeholder="Correo Eletrónico" required>
                                 <div class="men_error" ng-show="forma.emailU.$dirty && forma.emailU.$invalid">
                                     <p ng-show="forma.emailU.$error.required">El campo es obligatorio.</p>
                                     <p ng-show="forma.emailU.$error.email">Email invalido.</p>
@@ -52,23 +62,24 @@
                                 </div>
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputPassword1" class="col-sm-2">Teléfono</label>
-                                <div class="col-sm-10">
-                                <input type="number" class="form-control" name="telefonoU" ng-model="usuario.telefono" placeholder="Telefono: 5555-5555" required>
+                                <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">Teléfono</label>
+                                <div class="col-sm-10 col-xs-10">
+                                <input type="number" class="form-control" name="telefonoU" ng-model="midato.info_usuario.telefono" placeholder="55555555" required>
                                 <div class="men_error" ng-show="forma.telefonoU.$dirty && forma.telefonoU.$invalid">
                                     <p>El campo es obligatorio.</p>
                                 </div>
                                 </div>
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputPassword1" class="col-sm-2">No.ID</label>
-                                <div class="col-sm-10">
-                                <input type="text" class="form-control" name="dpiU" ng-model="usuario.dpi" placeholder="Documento de Identificación DPI/ID" required>
+                                <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">No.ID</label>
+                                <div class="col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" name="dpiU" ng-model="midato.info_usuario.noid" placeholder="Documento de Identificación DPI/ID" required>
                                 <div class="men_error" ng-show="forma.dpiU.$dirty && forma.dpiU.$invalid">
                                     <p>El campo es obligatorio.</p>
                                 </div>
                                 </div>
                               </div>
+                         
                               <div class="col-sm-12">
                                 <div class="ico_tarjetas">
                                   <ul>
