@@ -88,9 +88,11 @@ DCApp.controller('CheckinCtrl',function($location,$scope, $http, $timeout, $log,
                 $http.post('api/checkin/envio', enviadata)    
                         .success(function (data, status, headers) {
                                 console.log("Datos enviados correctamente");
+                                 $scope.midata=data;
                            })
                         .error(function (data, status, header, config) {
                             console.log("Parece que hay error al enviar los datos");
+                                $scope.midata=data;
                         });
 
       }    
