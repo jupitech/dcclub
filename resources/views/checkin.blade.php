@@ -16,7 +16,7 @@
                    <div class="caja_paquete">
                          <div class="col-sm-6 col-xs-6 spd">
                             <div class="col-sm-6 col-xs-6 spd spi">
-                              <div class="ima_tuki"></div>
+                              <div ng-if="mipaquete.nombre_paquete" class="ima_tuki" style="background: url('css/img/@{{mipaquete.nombre_paquete}}.png') no-repeat center;"></div>
                             </div>
                             <div class="col-sm-6 col-xs-6">
                               <h3>X @{{mipaquete.tukis_paquete}}</h3>
@@ -32,35 +32,45 @@
                       </div>
                       <div class="col-sm-12">
                         <form class="form_pago form-horizontal" name="forma" >
-                        
                               <div class="form-group">
-                                <label for="exampleInputEmail1" class="col-xs-2 col-sm-2">Nombre</label>
-                                <div class="col-xs-10 col-sm-10">
-                                      <div class="col-xs-6 col-sm-6 spi">
-                                             <input type="text" class="form-control" name="nombreU" ng-model="midato.info_usuario.first_name" placeholder="Nombre" required>
-                                            <div class="men_error" ng-show="forma.nombreU.$dirty && forma.nombreU.$invalid">
-                                                <p>Requerido</p>
-                                            </div>
-                                      </div>
-                                      <div class="col-xs-6 col-sm-6 spd">
-                                               <input type="text" class="form-control" name="apellidoU" ng-model="midato.info_usuario.last_name" placeholder="Apellido" required>
-                                            <div class="men_error" ng-show="forma.apellidoU.$dirty && forma.apellidoU.$invalid">
-                                                <p>Requerido</p>
-                                            </div>
-                                      </div>
-                               
-                                </div>
+                                <h3 class="info_user"><strong>Usuario </strong> @{{midato.info_usuario.first_name}} @{{midato.info_usuario.last_name}}</h3>
+                                     <h3 class="info_user"><strong>Correo </strong> @{{midato.email}}</h3>
                               </div>
-                              <div class="form-group">
-                                <label for="exampleInputEmail1" class="col-xs-2 col-sm-2">Email</label>
-                                <div class="col-xs-10 col-sm-10">
-                                <input type="email" class="form-control"  name="emailU" ng-model="midato.email" placeholder="Correo Eletrónico" required>
-                                <div class="men_error" ng-show="forma.emailU.$dirty && forma.emailU.$invalid">
-                                    <p ng-show="forma.emailU.$error.required">El campo es obligatorio.</p>
-                                    <p ng-show="forma.emailU.$error.email">Email invalido.</p>
-                                </div>
-                                </div>
-                              </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">Dirección</label>
+                                    <div class="col-sm-10 col-xs-10">
+                                    <input type="text" class="form-control" name="direccionU" ng-model="midato.info_usuario.direccion" placeholder="5 ave. 4-5" required>
+                                    <div class="men_error" ng-show="forma.direccionU.$dirty && forma.direccionU.$invalid">
+                                        <p>Requerido</p>
+                                    </div>
+                                    </div>
+                               </div>
+                               <div class="form-group estilo_drop">
+                                    <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">País</label>
+                                    <div class="col-sm-10 col-xs-10">
+                                    <ol class="nya-bs-select" ng-model="midato.info_usuario.pais" title="Selecciona un pais..." name="paisU"  data-live-search="true" >
+                                            <li nya-bs-option="pais in paises" data-value="pais.pais">
+                                              <a>
+                                                @{{ pais.pais }}
+                                              </a>
+                                            </li>
+                                     </ol>
+                                    <div class="men_error" ng-show="forma.paisU.$dirty && forma.paisU.$invalid">
+                                        <p>Requerido</p>
+                                    </div>
+                                    </div>
+                               </div>
+                                <div class="form-group ">
+                                    <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">Depto.</label>
+                                     <div class="col-sm-10 col-xs-10">
+                                    <input type="text" class="form-control" name="ciudadU" ng-model="midato.info_usuario.ciudad" placeholder="Departamento/Ciudad" required>
+                                    <div class="men_error" ng-show="forma.ciudadU.$dirty && forma.ciudadU.$invalid">
+                                        <p>El campo es obligatorio.</p>
+                                    </div>
+                                    </div>
+                               </div>
+
+
                               <div class="form-group">
                                 <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">Teléfono</label>
                                 <div class="col-sm-10 col-xs-10">
@@ -93,9 +103,9 @@
                               <div class="form-group">
                                 <label for="exampleInputPassword1" class="col-sm-2">N.Tarjeta</label>
                                 <div class="col-sm-10">
-                                <input type="number" class="form-control"  name="notarjetaU" ng-model="usuario.notarjeta" placeholder="**** **** **** ****" required>
+                                <input type="text" class="form-control"  name="notarjetaU" ng-model="usuario.notarjeta" placeholder="**** **** **** ****" required minlength="16" maxlength="16" ng-maxlength="16" ng-pattern="/^[0-9]*$/">
                                 <div class="men_error" ng-show="forma.notarjetaU.$dirty && forma.notarjetaU.$invalid">
-                                    <p>El campo es obligatorio.</p>
+                                    <p>Requerido, Mínimo 16 números</p>
                                 </div>
 
                                 </div>
@@ -105,18 +115,27 @@
                                 <div class="form-group">
                                   <label for="exampleInputPassword1" class="col-sm-12">Fecha de Vencimiento</label>
                                   <div class="col-sm-6 col-xs-6">
-                                  <input type="number" class="form-control" id="exampleInputEmail1" placeholder="MM">
+                                  <input type="text"  name="mesU" class="form-control"  ng-model="usuario.mestarjeta"  placeholder="MM" maxlength="2" ng-maxlength="2" ng-pattern="/^[0-9]*$/" required>
+                                   <div class="men_error" ng-show="forma.mesU.$dirty && forma.mesU.$invalid">
+                                    <p>Núm.</p>
+                                    </div>
                                   </div>
                                   <div class="col-sm-6 col-xs-6">
-                                  <input type="number" class="form-control" id="exampleInputEmail1" placeholder="AA">
+                                  <input type="text" name="anioU" class="form-control" ng-model="usuario.aniotarjeta" placeholder="AA" maxlength="2" ng-maxlength="2" ng-pattern="/^[0-9]*$/" required>
+                                   <div class="men_error" ng-show="forma.anioU.$dirty && forma.anioU.$invalid">
+                                    <p>Núm.</p>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                               <div class="col-sm-6 col-xs-6 spd">
                                 <div class="form-group">
                                   <label for="exampleInputPassword1" class="col-sm-12">CVV</label>
-                                  <div class="col-sm-6 ">
-                                  <input type="number" class="form-control" id="exampleInputEmail1" placeholder="CVV">
+                                  <div class="col-sm-12 ">
+                                   <input type="text" name="cvvU" class="form-control" ng-model="usuario.cvvtarjeta" placeholder="CVV" maxlength="4" ng-maxlength="4" ng-pattern="/^[0-9]*$/" required>
+                                   <div class="men_error" ng-show="forma.cvvU.$dirty && forma.cvvU.$invalid">
+                                    <p>Núm.</p>
+                                    </div>
                                   </div>
 
                                 </div>
@@ -129,7 +148,7 @@
                                 </div>
                               </div>
 
-                              <button type="submit" class="btn btn-default">Comprar</button>
+                              <button type="submit" class="btn btn-default" ng-disabled="forma.$invalid">Comprar</button>
                             </form>
                       </div>
                    </div>

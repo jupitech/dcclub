@@ -22,6 +22,7 @@
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     {{--<link rel="stylesheet" type="text/css" href="{{ asset('assets/bower/bootstrap/dist/css/bootstrap.min.css') }}">--}}
      <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ asset('css/nya-bs-select.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 </head>

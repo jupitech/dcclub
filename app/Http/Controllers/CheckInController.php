@@ -13,6 +13,7 @@ class CheckInController extends Controller
       public function indexuser($token)
     {
           $devdonc= new GuzzleHttpClient();
+         // $apidev=$devdonc->request('GET', 'http://doncampeon.app/api/v1/checkin/'.$token);
           $apidev=$devdonc->request('GET', 'https://devdonccscg.com/api/v1/checkin/'.$token);
           $miconte=$apidev->getBody()->getContents();
           
@@ -22,6 +23,7 @@ class CheckInController extends Controller
      public function indexpaquete($paquete)
     {
           $devdonc= new GuzzleHttpClient();
+           //$apidev=$devdonc->request('GET', 'http://doncampeon.app/api/v1/checkin/paquete/'.$paquete);
           $apidev=$devdonc->request('GET', 'https://devdonccscg.com/api/v1/checkin/paquete/'.$paquete);
           $miconte=$apidev->getBody()->getContents();
           

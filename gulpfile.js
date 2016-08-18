@@ -32,7 +32,7 @@ elixir(function(mix) {
     mix.copy(npmDir + 'moment/moment.js',jsDir);
     mix.copy(npmDir + 'moment-timezone/moment-timezone.js',jsDir);
     mix.copy(npmDir + 'angular-moment/angular-moment.min.js',jsDir);
-
+    mix.copy(npmDir + 'nya-bootstrap-select/dist/js/nya-bs-select.min.js',jsDir);
       mix.styles([
         'bootstrap.min.css',
     ], 'public/css/bootstrap.css');
@@ -49,7 +49,8 @@ elixir(function(mix) {
         'ui-bootstrap.js',
         'moment.js',
         'moment-timezone.js',
-        'angular-moment.min.js'
+        'angular-moment.min.js',
+        'nya-bs-select.min.js'
     ], 'public/js/vendor.js');	
 
 
