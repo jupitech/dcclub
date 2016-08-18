@@ -31,7 +31,7 @@
                         <p class="monto">Monto a pagar $ @{{mipaquete.monto_dolar | number:2}}</p>
                       </div>
                       <div class="col-sm-12">
-                        <form class="form_pago form-horizontal" name="forma" >
+                        <form class="form_pago form-horizontal" name="forma" ng-submit="enviarCompra()" >
                               <div class="form-group">
                                 <h3 class="info_user"><strong>Usuario </strong> @{{midato.info_usuario.first_name}} @{{midato.info_usuario.last_name}}</h3>
                                      <h3 class="info_user"><strong>Correo </strong> @{{midato.email}}</h3>
@@ -132,7 +132,7 @@
                                 <div class="form-group">
                                   <label for="exampleInputPassword1" class="col-sm-12">CVV</label>
                                   <div class="col-sm-12 ">
-                                   <input type="text" name="cvvU" class="form-control" ng-model="usuario.cvvtarjeta" placeholder="CVV" maxlength="4" ng-maxlength="4" ng-pattern="/^[0-9]*$/" required>
+                                   <input type="text" name="cvvU" class="form-control" ng-model="usuario.cvvtarjeta" placeholder="CVV" maxlength="3" ng-maxlength="4" ng-pattern="/^[0-9]*$/" required>
                                    <div class="men_error" ng-show="forma.cvvU.$dirty && forma.cvvU.$invalid">
                                     <p>Núm.</p>
                                     </div>

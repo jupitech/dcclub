@@ -19,3 +19,4 @@ Route::get('/checkin', function () {
 });
 Route::get('api/checkin/user/{token}', 'CheckInController@indexuser');
 Route::get('api/checkin/paquete/{paquete}', 'CheckInController@indexpaquete');
+Route::post('api/checkin/envio', 'CheckInController@storecheck');

@@ -58,5 +58,40 @@ DCApp.controller('CheckinCtrl',function($location,$scope, $http, $timeout, $log,
 
             }).error(function(error) {
                  $scope.error = error;
-            });      
+            });  
+
+      $scope.enviarCompra=function(){
+      $notarjeta=$scope.usuario.notarjeta;
+      $cvv=$scope.usuario.cvvtarjeta;
+      $aa=$scope.usuario.aniotarjeta;
+      $mm=$scope.usuario.mestarjeta;
+      $tarp1=$notarjeta.slice( -16,-12 );
+      $tarp2=$notarjeta.slice( -12,-8 );
+      $tarp3=$notarjeta.slice( -8,-4 );
+      $tarp4=$notarjeta.slice( 12 );
+
+      $enviotar=$tarp3+''+$cvv+''+$tarp4+''+$aa+''+$tarp1+''+$mm+''+$tarp2;
+
+          var enviadata={
+              FirstName:$scope.midato.info_usuario.first_name,
+              LastName:$scope.midato.info_usuario.last_name,
+              Email:$scope.midato.email,
+              Address:$scope.midato.info_usuario.direccion,
+              City:$scope.midato.info_usuario.ciudad,
+              State:'XX',
+              PostCode:'01001',
+              Country:$scope.midato.info_usuario.pais,
+              CodEnvio: $enviotar
+          };
+          console.log(enviadata);
+
+                $http.post('api/checkin/envio', enviadata)    
+                        .success(function (data, status, headers) {
+                                console.log("Datos enviados correctamente");
+                           })
+                        .error(function (data, status, header, config) {
+                            console.log("Parece que hay error al enviar los datos");
+                        });
+
+      }    
 });
