@@ -150,6 +150,9 @@
 
                               <button type="submit" class="btn btn-default" ng-disabled="forma.$invalid">Comprar</button>
                             </form>
+                            <div class="col-sm-12">
+                              <p>Datos de respuesta: @{{midata}}</p>
+                            </div>
                       </div>
                    </div>
                    <div class="caja_footer">
