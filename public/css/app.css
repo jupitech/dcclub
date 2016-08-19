@@ -252,6 +252,14 @@ body {
 .estilo_drop label {
   margin-top: 15px !important; }
 
+.checkbox {
+  float: left;
+  width: 100%; }
+
+.abajo_data {
+  float: left;
+  width: 100%; }
+
 @media (max-width: 467px) {
   .container {
     padding: 0 !important; }
