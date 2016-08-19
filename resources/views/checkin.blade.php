@@ -90,17 +90,18 @@
                                 </div>
                               </div>
                          
-                              <div class="col-sm-12">
-                                <div class="ico_tarjetas">
-                                  <ul>
-                                    <li class="t_visa"></li>
-                                    <li class="t_master"></li>
-                                    <li class="t_amer"></li>
-                                    <li class="t_debito"></li>
-                                  </ul>
-                                </div>
-                              </div>
+                              
                               <div class="form-group">
+                                  <div class="col-sm-12">
+                                    <div class="ico_tarjetas">
+                                      <ul>
+                                        <li class="t_visa"></li>
+                                        <li class="t_master"></li>
+                                        <li class="t_amer"></li>
+                                        <li class="t_debito"></li>
+                                      </ul>
+                                    </div>
+                                  </div>
                                 <label for="exampleInputPassword1" class="col-sm-2">N.Tarjeta</label>
                                 <div class="col-sm-10">
                                 <input type="text" class="form-control"  name="notarjetaU" ng-model="usuario.notarjeta" placeholder="**** **** **** ****" required minlength="16" maxlength="16" ng-maxlength="16" ng-pattern="/^[0-9]*$/">
@@ -111,8 +112,9 @@
                                 </div>
 
                               </div>
+                              <div class="form-group">
                               <div class="col-sm-6 col-xs-6 spd spi">
-                                <div class="form-group">
+                                
                                   <label for="exampleInputPassword1" class="col-sm-12">Fecha de Vencimiento</label>
                                   <div class="col-sm-6 col-xs-6">
                                   <input type="text"  name="mesU" class="form-control"  ng-model="usuario.mestarjeta"  placeholder="MM" maxlength="2" ng-maxlength="2" ng-pattern="/^[0-9]*$/" required>
@@ -127,28 +129,29 @@
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                              <div class="col-sm-6 col-xs-6 spd">
-                                <div class="form-group">
-                                  <label for="exampleInputPassword1" class="col-sm-12">CVV</label>
-                                  <div class="col-sm-12 ">
-                                   <input type="text" name="cvvU" class="form-control" ng-model="usuario.cvvtarjeta" placeholder="CVV" maxlength="3" ng-maxlength="4" ng-pattern="/^[0-9]*$/" required>
-                                   <div class="men_error" ng-show="forma.cvvU.$dirty && forma.cvvU.$invalid">
-                                    <p>Núm.</p>
+                            
+                                  <div class="col-sm-6 col-xs-6 spd">
+                                   
+                                      <label for="exampleInputPassword1" class="col-sm-12">CVV</label>
+                                      <div class="col-sm-12 ">
+                                       <input type="text" name="cvvU" class="form-control" ng-model="usuario.cvvtarjeta" placeholder="CVV" maxlength="3" ng-maxlength="4" ng-pattern="/^[0-9]*$/" required>
+                                       <div class="men_error" ng-show="forma.cvvU.$dirty && forma.cvvU.$invalid">
+                                        <p>Núm.</p>
+                                        </div>
+                                      </div>
+                                  </div>
+                                   <div class="col-sm-12 spd spi">
+                                    <div class="checkbox">
+                                      <label>
+                                        <input type="checkbox"> Aceptas los términos y condiciones
+                                      </label>
                                     </div>
                                   </div>
-
                                 </div>
-                              </div>
-                              <div class="col-sm-12 spd spi">
-                                <div class="checkbox">
-                                  <label>
-                                    <input type="checkbox"> Aceptas los términos y condiciones
-                                  </label>
-                                </div>
-                              </div>
-
+                             
+                               <div class="form-group">
                               <button type="submit" class="btn btn-default" ng-disabled="forma.$invalid">Comprar</button>
+                              </div>
                             </form>
                             <div class="col-sm-12 abajo_data">
                               <p>Datos de respuesta: @{{midata}}</p>
