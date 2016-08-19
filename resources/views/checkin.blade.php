@@ -140,13 +140,7 @@
                                         </div>
                                       </div>
                                   </div>
-                                   <div class="col-sm-12 spd spi">
-                                    <div class="checkbox">
-                                      <label>
-                                        <input type="checkbox"> Aceptas los términos y condiciones
-                                      </label>
-                                    </div>
-                                  </div>
+                                  
                                 </div>
                              
                                <div class="form-group">
