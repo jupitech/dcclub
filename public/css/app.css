@@ -168,7 +168,9 @@ body {
   width: 100%; }
 
 .form_pago {
-  margin: 10px 0 10px; }
+  margin: 10px 0 10px;
+  float: left;
+  width: 100%; }
 
 .monto {
   margin: 5px 0 5px 0;
