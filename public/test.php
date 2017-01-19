@@ -7,7 +7,7 @@ $reference = 'Paquete 1';
 $amount = '2.00'; // will provide success response
 $currency = 'USD';
 $email = 'techsupport@billpro.com';
-$uip = '127.0.0.1'; // this must be your REAL ip address
+$uip = '45.55.212.97'; // this must be your REAL ip address
 $phone = '123123123';
 $firstname = 'Carlos';
 $lastname = 'Ruano';
@@ -17,7 +17,7 @@ $address ='Guatemala';
 $city = 'Guatemala';
 $state = 'Guatemala';
 $postcode = '01001';
-$countrycode = 'GR';
+$countrycode = 'GT';
 $card_no = '4313540764111224';
 $card_exp_month = '05';
 $card_exp_year = '2019';
@@ -57,7 +57,7 @@ curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $xmlquerybuild);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 1);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 $result = curl_exec($ch);
 curl_close($ch);
 $xmlresult = simplexml_load_string($result);
