@@ -104,6 +104,9 @@ body{
   box-shadow: 1px 5px 10px 0 rgba(0,0,0,0.1);
   .nav-tabs{
 	  border: none !important;
+	  position: fixed;
+	  width: 100%;
+	  z-index: 1000;
 	}
 	.nav-tabs>li{
 	  float: left;
@@ -132,6 +135,7 @@ body{
  border-top: none !important;
  border-bottom: 2px solid #00aeeb;
    color: #fff;
+    padding-top: 25px;
 }
 .caja_paquete{
   float: left;
@@ -174,7 +178,8 @@ body{
   float: left;
   width: 100%;
   margin:0 0 10px 0;
-  background: #F2F2F2;
+  margin-top: 55px;
+  background: #f9f9f9;
   padding: 10px;
   border-radius: 5px;
 
@@ -193,18 +198,25 @@ body{
 	.btn-default{
 	  float: right;
 	  margin: 5px 0;
-	  border: none !important;
+	  border: none;
+	  border-bottom: 3px solid #0594c4;
 	  background: #00AFEC;
 	  color: #fff;
 	  font-size: 16px;
 	  font-weight: bold;
 	  text-align: center;
 	  padding: 10px 15px;
+	  width: 60%;
+	  margin: 5px 20%;
 	}
 }
 .caja_footer{
 	float: left;
 	width: 100%;
+	h5{
+		text-align: center;
+		font-size: 13px;
+	}
 }
 .form_pago{
   margin: 10px 0 10px;

@@ -46,5 +46,14 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         return parent::render($request, $e);
+        
+        if(strpos($e->getMessage(), 'SOAP-ERROR') !== false)
+            {
+                return false;
+            }
+
+
     }
+
+
 }

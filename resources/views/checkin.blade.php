@@ -13,7 +13,7 @@
              <div class="tab-content">
                <div role="tabpanel" class="tab-pane active" id="comprar">
                  <div class="col-sm-12">
-                   <div class="caja_paquete">
+                  {{--  <div class="caja_paquete">
                          <div class="col-sm-6 col-xs-6 spd">
                             <div class="col-sm-6 col-xs-6 spd spi">
                               <div ng-if="mipaquete.nombre_paquete" class="ima_tuki" style="background: url('css/img/@{{mipaquete.nombre_paquete}}.png') no-repeat center;"></div>
@@ -25,10 +25,10 @@
                          <div class="col-sm-6 col-xs-6">
                               <h4>$  @{{mipaquete.monto_dolar | number:2}}</h4>
                          </div>
-                   </div>
+                   </div> --}}
                    <div class="caja_tarjeta">
                       <div class="col-sm-12">
-                        <p class="monto">Monto a pagar $ @{{mipaquete.monto_dolar | number:2}}</p>
+                        <p class="monto">Monto: $ @{{mipaquete.monto_dolar | number:2}} ( @{{mipaquete.tukis_paquete}} TUKIS )</p>
                       </div>
                       <div class="col-sm-12">
                         <form class="form_pago form-horizontal" name="forma" ng-submit="enviarCompra()" >
@@ -80,16 +80,7 @@
                                 </div>
                                 </div>
                               </div>
-                              <div class="form-group">
-                                <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">No.ID</label>
-                                <div class="col-sm-10 col-xs-10">
-                                <input type="text" class="form-control" name="dpiU" ng-model="midato.info_usuario.noid" placeholder="Documento de Identificación DPI/ID" required>
-                                <div class="men_error" ng-show="forma.dpiU.$dirty && forma.dpiU.$invalid">
-                                    <p>El campo es obligatorio.</p>
-                                </div>
-                                </div>
-                              </div>
-                         
+                             
                               
                               <div class="form-group">
                                   <div class="col-sm-12">
@@ -117,13 +108,13 @@
                                 
                                   <label for="exampleInputPassword1" class="col-sm-12">Fecha de Vencimiento</label>
                                   <div class="col-sm-6 col-xs-6">
-                                  <input type="text"  name="mesU" class="form-control"  ng-model="usuario.mestarjeta"  placeholder="MM" maxlength="2" ng-maxlength="2" ng-pattern="/^[0-9]*$/" required>
+                                  <input type="text"  name="mesU" class="form-control"  ng-model="usuario.mestarjeta"  placeholder="Mes" maxlength="2" ng-maxlength="2" ng-pattern="/^[0-9]*$/" required>
                                    <div class="men_error" ng-show="forma.mesU.$dirty && forma.mesU.$invalid">
                                     <p>Núm.</p>
                                     </div>
                                   </div>
                                   <div class="col-sm-6 col-xs-6">
-                                  <input type="text" name="anioU" class="form-control" ng-model="usuario.aniotarjeta" placeholder="AA" maxlength="2" ng-maxlength="2" ng-pattern="/^[0-9]*$/" required>
+                                  <input type="text" name="anioU" class="form-control" ng-model="usuario.aniotarjeta" placeholder="Año" maxlength="2" ng-maxlength="2" ng-pattern="/^[0-9]*$/" required>
                                    <div class="men_error" ng-show="forma.anioU.$dirty && forma.anioU.$invalid">
                                     <p>Núm.</p>
                                     </div>
@@ -132,7 +123,7 @@
                             
                                   <div class="col-sm-6 col-xs-6 spd">
                                    
-                                      <label for="exampleInputPassword1" class="col-sm-12">CVV</label>
+                                      <label for="exampleInputPassword1" class="col-sm-12">Cod. Seguridad</label>
                                       <div class="col-sm-12 ">
                                        <input type="text" name="cvvU" class="form-control" ng-model="usuario.cvvtarjeta" placeholder="CVV" maxlength="3" ng-maxlength="4" ng-pattern="/^[0-9]*$/" required>
                                        <div class="men_error" ng-show="forma.cvvU.$dirty && forma.cvvU.$invalid">
@@ -153,11 +144,11 @@
                       </div>
                    </div>
                    <div class="caja_footer">
-                   	 <div class="col-sm-12 spd spi">
-	                     <div class="col-sm-6 spd spi">
+                   	 <div class="col-xs-12 col-sm-12 spd spi">
+	                     <div class=" col-xs-6 col-sm-6 spd spi">
 	                       <h5>Políticas de Compra</h5>
 	                     </div>
-	                     <div class="col-sm-6 spd spi">
+	                     <div class="col-xs-6 col-sm-6 spd spi">
 	                       <h5>Términos y Condiciones</h5>
 	                     </div>
 	                   </div>

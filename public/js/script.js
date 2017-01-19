@@ -92,7 +92,7 @@ DCApp.controller('CheckinCtrl',function($location,$scope, $http, $timeout, $log,
                            })
                         .error(function (data, status, header, config) {
                             console.log("Parece que hay error al enviar los datos");
-                                $scope.midata=data;
+                              //  $scope.midata=data;
                         });
 
       }    

@@ -9,14 +9,26 @@ use GuzzleHttp\Client as GuzzleHttpClient;
 use GuzzleHttp\Exception\RequestException;
 use Artisaninweb\SoapWrapper\Facades\SoapWrapper;
 use SoapClient;
+use SoapFault;
 
 class CheckInController extends Controller
 {
+
+
+public function __construct() {
+//    parent::__construct();
+    ini_set('soap.wsdl_cache_enabled', 0);
+    ini_set('soap.wsdl_cache_ttl', 0);
+    ini_set('default_socket_timeout', 300);
+    ini_set('max_execution_time', 0);
+}
+
+
       public function indexuser($token)
     {
           $devdonc= new GuzzleHttpClient();
-        // $apidev=$devdonc->request('GET', 'http://doncampeon.app/api/v1/checkin/'.$token);
-        $apidev=$devdonc->request('GET', 'https://devdonccscg.com/api/v1/checkin/'.$token);
+        $apidev=$devdonc->request('GET', 'http://doncampeon.app/api/v1/checkin/'.$token);
+        //$apidev=$devdonc->request('GET', 'https://devdonccscg.com/api/v1/checkin/'.$token);
           $miconte=$apidev->getBody()->getContents();
           
           return  $miconte;
@@ -25,8 +37,8 @@ class CheckInController extends Controller
      public function indexpaquete($paquete)
     {
           $devdonc= new GuzzleHttpClient();
-         //$apidev=$devdonc->request('GET', 'http://doncampeon.app/api/v1/checkin/paquete/'.$paquete);
-         $apidev=$devdonc->request('GET', 'https://devdonccscg.com/api/v1/checkin/paquete/'.$paquete);
+         $apidev=$devdonc->request('GET', 'http://doncampeon.app/api/v1/checkin/paquete/'.$paquete);
+         //$apidev=$devdonc->request('GET', 'https://devdonccscg.com/api/v1/checkin/paquete/'.$paquete);
           $miconte=$apidev->getBody()->getContents();
           
           return  $miconte;
@@ -42,7 +54,7 @@ class CheckInController extends Controller
         $accountid = 43635166;
       $authcode =  'TTGtcutavepsZvRJ';
       $reference = 'Test Example Transaction';
-      $amount=0.10;
+      $amount=1.00;
       $currency='USD';
       $email='info@jupi.tech';
       $uip='45.55.212.97';
@@ -97,72 +109,47 @@ class CheckInController extends Controller
               )
 
           );
+/*
+       try{
+          $client = new \SoapClient('https://gateway.billpro.com/',array( 'exceptions' => true,"trace" => true, "cache_wsdl" => 0)); 
 
-        try{
-            $client = new \SoapClient('https://gateway.billpro.com/?wsdl',array( 'exceptions' => 1)); 
+          /*  $funcion=dump($client->__getFunctions());
+            $types=dump($client->__getTypes());
+            $parametros=dump($client->getWeatherInformation());
 
-             $resultado=$client->AuthorizeCapture($dte);
+              return response()->json(['funcion' => $funcion,'types'=> $types,'parametros'=> $parametros],200);*/
+/*
+            $resultado=$client->AuthorizeCapture(array($dte));
+               if($resultado->Response)
+                      {    
+                          return response()->json(['Resultado' => 'Tarjeta enviada correctamente'],200);
+                      }else{
+                          return response()->json(['ERROR' =>  $resultado->ResponseCode],400); 
+                      }
 
-        } catch (SoapFault $E) { 
-          $objResponse->addAlert($E->faultstring);
-      }
 
-
-     /*
-        // Add a new service to the wrapper
-            SoapWrapper::add(function ($service) {
-               $service
-               ->name('billpro')
-               ->wsdl('https://gateway.billpro.com/')
-               ->trace(true);
-             });
-       
-        // Using the added service
-        SoapWrapper::service('billpro', function ($service) use ($dte) {
-
-        var_dump($service->call('AuthorizeCapture', [$dte]));
-        });
-  
-    
+        }  catch (\SoapFault $fault) {
+           return $fault->faultstring;
+        
 */
- 
+
+        $testfile = file_get_contents('https://gateway.billpro.com/');
+
+          return response()->json(['Respuesta' =>$testfile],200); 
        
        /**
         * Pruebas con Guzzle
         * @var GuzzleHttpClient
         */
        
-       /*
-        $billpro= new GuzzleHttpClient();
+       
+      /* $billpro= new GuzzleHttpClient();
 
-        $response  = $billpro->request('POST', 'https://www.billpro.com/payment/', [
-              'query' => [
-                  'acid' => $accountid,
-                  'auth' =>  $authcode,
-                  'successurl' => 'https://www.doncampeon.club/',
-                  'Reference' => 'abc',
-                  'product' => '123',
-                  'amount' => $amount,
-                  'description' => 'Prueba de producto',
-                  'FirstName' =>  $FirstName,
-                  'LastName' => $LastName,
-                  'Address' => $Address,
-                  'City' => $City,
-                  'Country' => $Country,
-                  'State' => $State,
-                  'PostCode' => $PostCode,
-                  'Phone' => $phone,
-                  'Email' =>  $Email,
-                  'CardNumber' => $CardNumber,
-                  'ExpMonth' => $mm,
-                  'EXpYear' => $aa,
-                  'CardCVV' =>  $cvv
-              ]
-          ]);
+        $response  = $billpro->request('POST', 'https://gateway.billpro.com/', array($dte));
 
 
-              return $response->getBody()->getContents();
-         */
+              return response()->json(['Respuesta' =>$response],200); */
+         
         
              
 
