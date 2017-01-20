@@ -4,15 +4,14 @@ $action = 'AuthorizeCapture';
 $accountid = '43635166';
 $authcode = 'TTGtcutavepsZvRJ';
 $reference = 'Paquete 1';
-$amount = '2.00'; // will provide success response
+$amount = '3.25'; // will provide success response
 $currency = 'USD';
-$email = 'techsupport@billpro.com';
+$email = 'info@jupi.tech';
 $uip = '45.55.212.97'; // this must be your REAL ip address
 $phone = '123123123';
 $firstname = 'Carlos';
 $lastname = 'Ruano';
-$dob = '19810530'; // 30th May 1981
-$ssn = '4344';
+$dob = '20170120'; // 30th May 1981
 $address ='Guatemala';
 $city = 'Guatemala';
 $state = 'Guatemala';
@@ -38,7 +37,6 @@ $xmlquerybuild = '<?xml version="1.0" encoding="utf-8"?>
 <FirstName>'.$firstname.'</FirstName>
 <LastName>'.$lastname.'</LastName>
 <DOB>'.$dob.'</DOB>
-<SSN>'.$ssn.'</SSN>
 <Address>'.$address.'</Address>
 <City>'.$city.'</City>
 <State>'.$state.'</State>
