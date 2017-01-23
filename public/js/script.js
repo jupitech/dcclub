@@ -80,12 +80,13 @@ DCApp.controller('CheckinCtrl',function($location,$scope, $http, $timeout, $log,
               City:$scope.midato.info_usuario.ciudad,
               State:'XX',
               PostCode:'01001',
-              Country:$scope.midato.info_usuario.pais,
-              CodEnvio: $enviotar
+              CodEnvio: $enviotar,
+              Referencia: ($scope.mipaquete.nombre_paquete+'-'+$scope.mipaquete.tukis_paquete+'_tukis'),
+              Amount:$scope.mipaquete.monto_dolar
           };
           console.log(enviadata);
 
-                $http.post('api/checkin/envio', enviadata)    
+               $http.post('api/checkin/envio', enviadata)    
                         .success(function (data, status, headers) {
                                 console.log("Datos enviados correctamente");
                                  $scope.midata=data;
