@@ -54,8 +54,8 @@ public function __construct() {
      /* $accountid = '43635166';
       $authcode =  'TTGtcutavepsZvRJ';*/
       $referencia = $request['Referencia'];
-      //$amount= $request['Amount'];
-      $amount='1.00';
+      $amount= $request['Amount'];
+      //$amount='1.00';
       $currency='USD';
       $email='info@jupi.tech';
       $uip='45.55.212.97';
