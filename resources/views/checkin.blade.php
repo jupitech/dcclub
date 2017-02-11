@@ -12,7 +12,7 @@
             </ul>
              <div class="tab-content">
                <div role="tabpanel" class="tab-pane active" id="comprar">
-                 <div class="col-sm-12">
+                 <div class="col-sm-12 spd spi">
                   {{--  <div class="caja_paquete">
                          <div class="col-sm-6 col-xs-6 spd">
                             <div class="col-sm-6 col-xs-6 spd spi">
@@ -33,8 +33,30 @@
                       <div class="col-sm-12">
                         <form class="form_pago form-horizontal" name="forma" ng-submit="enviarCompra()" >
                               <div class="form-group">
-                                <h3 class="info_user"><strong>Usuario </strong> @{{midato.info_usuario.first_name}} @{{midato.info_usuario.last_name}}</h3>
+                                <h3 class="info_user"><strong>Usuario </strong> @{{midato.info_usuario.alias}}</h3>
                                      <h3 class="info_user"><strong>Correo </strong> @{{midato.email}}</h3>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-sm-6 col-xs-6">
+                                   
+                                      <label for="exampleInputPassword1" class="col-sm-12 spd spi">Nombre</label>
+                                      <div class="col-sm-12 spd spi">
+                                       <input type="text" name="first_name" class="form-control" ng-model="midato.info_usuario.first_name" required>
+                                       <div class="men_error" ng-show="forma.first_name.$dirty && forma.first_name.$invalid">
+                                        <p>Requerido</p>
+                                        </div>
+                                      </div>
+                                  </div>
+                                   <div class="col-sm-6 col-xs-6">
+                                   
+                                      <label for="exampleInputPassword1" class="col-sm-12 spd spi">Apellido</label>
+                                      <div class="col-sm-12 spd spi">
+                                       <input type="text" name="last_name" class="form-control" ng-model="midato.info_usuario.last_name" required>
+                                       <div class="men_error" ng-show="forma.last_name.$dirty && forma.last_name.$invalid">
+                                        <p>Requerido</p>
+                                        </div>
+                                      </div>
+                                  </div>
                               </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">Dirección</label>
@@ -83,23 +105,19 @@
                              
                               
                               <div class="form-group">
-                                  <div class="col-sm-12">
-                                    <div class="ico_tarjetas">
-                                      <ul>
-                                        <li class="t_visa"></li>
-                                        <li class="t_master"></li>
-                                        <li class="t_amer"></li>
-                                        <li class="t_debito"></li>
-                                      </ul>
-                                    </div>
-                                  </div>
+                                 
                                 <label for="exampleInputPassword1" class="col-sm-2">N.Tarjeta</label>
-                                <div class="col-sm-10">
+                                <div class="col-sm-10 posirela">
                                 <input type="text" class="form-control"  name="notarjetaU" ng-model="usuario.notarjeta" placeholder="**** **** **** ****" required minlength="16" maxlength="16" ng-maxlength="16" ng-pattern="/^[0-9]*$/">
-                                <div class="men_error" ng-show="forma.notarjetaU.$dirty && forma.notarjetaU.$invalid">
-                                    <p>Requerido, Mínimo 16 números</p>
-                                </div>
-
+                                      <div class="men_error" ng-show="forma.notarjetaU.$dirty && forma.notarjetaU.$invalid">
+                                          <p>Requerido, Mínimo 16 números</p>
+                                      </div>
+                                      <div class="ico_tarjetas">
+                                        <ul>
+                                            <li class="t_@{{usuario.notarjeta | validacard}}"></li>
+                                        </ul>
+                                       
+                                      </div>
                                 </div>
 
                               </div>

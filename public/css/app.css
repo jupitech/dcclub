@@ -208,36 +208,43 @@ body {
   font-weight: bold; }
 
 .ico_tarjetas {
-  float: left;
-  margin: 5px 0;
-  padding: 5px;
-  width: 100%; }
-  .ico_tarjetas ul {
     float: left;
-    width: 100%;
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    /* margin: 5px 0; */
+    /* padding: 5px; */
+    /* width: 100%; */
+}
+  .ico_tarjetas ul {
+     float: left;
+    /* width: 100%; */
     padding: 0;
     margin: 0;
-    list-style: none; }
+    list-style: none;
+     }
   .ico_tarjetas li {
-    float: left;
-    width: 25%;
-    height: 30px; }
+      float: left;
+    /* width: 25%; */
+    height: 30px;
+    width: 50px;
+  }
 
 .t_visa {
   background: url("img/t_visa.png") no-repeat center;
-  background-size: 50px; }
+  background-size: 40px; }
 
 .t_master {
   background: url("img/t_master.png") no-repeat center;
-  background-size: 50px; }
+  background-size: 40px; }
 
 .t_amer {
   background: url("img/t_amer.png") no-repeat center;
-  background-size: 50px; }
+  background-size: 40px; }
 
 .t_debito {
   background: url("img/t_debito.png") no-repeat center;
-  background-size: 50px; }
+  background-size: 40px; }
 
 .men_error {
   float: left;
@@ -290,6 +297,10 @@ body {
 .abajo_data {
   float: left;
   width: 100%; }
+
+  .posirela{
+    position: relative;
+  }
 
 @media (max-width: 467px) {
   .container {
