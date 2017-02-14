@@ -37,7 +37,7 @@ public function __construct() {
      public function indexpaquete($paquete)
     {
           $devdonc= new GuzzleHttpClient();
-         //$apidev=$devdonc->request('GET', 'http://donchamps.app/api/v1/checkin/paquete/'.$paquete);
+        //$apidev=$devdonc->request('GET', 'http://donchamps.app/api/v1/checkin/paquete/'.$paquete);
          $apidev=$devdonc->request('GET', 'https://devdonccscg.com/api/v1/checkin/paquete/'.$paquete);
           $miconte=$apidev->getBody()->getContents();
           

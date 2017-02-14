@@ -89,8 +89,8 @@ body {
     float: left;
     width: 100%; }
     .caja .nav-tabs > li a {
-      background: #1b3043 !important;
-      color: #fff;
+      background: #f9f9f9 !important;
+      color: #333;
       margin: 0 !important;
       border-radius: 0 !important;
       letter-spacing: 0.03em;
@@ -107,8 +107,8 @@ body {
   border-left: none !important;
   border-right: none !important;
   border-top: none !important;
-  border-bottom: 2px solid #00aeeb;
-  color: #fff;
+  border-bottom: 2px solid #f3f3f3;
+  color: #333;
   padding-top: 25px; }
 
 .caja_paquete {
@@ -187,7 +187,9 @@ body {
     width: 100% !important;
     margin: 5px 0 !important; }
 
-
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
 
 .caja_footer {
   float: left;
@@ -202,7 +204,7 @@ body {
   width: 100%; }
 
 .monto {
-  margin: 5px 0 5px 0;
+  margin: 0;
   text-align: center;
   font-size: 18px;
   font-weight: bold; }
@@ -265,16 +267,12 @@ body {
 .info_user {
   float: left;
   width: 100%;
-  font-size: 16px;
+  font-size: 15px;
   margin: 5px 0;
   padding: 0 15px; }
   .info_user strong {
-    padding: 3px 5px;
-    border-radius: 3px;
-    background: #bfe091;
-    margin-right: 10px;
-    color: #fff;
-    font-weight: normal; }
+    font-weight: bold; 
+  }
 
 .estilo_drop ol {
   float: left !important;

@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="container">
-		      <div class="caja" ng-controller="CheckinCtrl">
+		      <div class="caja" ng-controller="CheckinCtrl" ng-cloak>
 
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#comprar" aria-controls="comprar" role="tab" data-toggle="tab">Comprar</a></li>
+              <li role="presentation" class="active"><a href="#comprar" aria-controls="comprar" role="tab" data-toggle="tab"> <p class="monto">Monto: $ @{{mipaquete.monto_dolar | number:2}} ( @{{mipaquete.tukis_paquete}} TUKIS )</p></a></li>
                 <!--
               <li role="presentation"><a href="#cobrar" aria-controls="cobrar" role="tab" data-toggle="tab">Cobrar</a></li>
                -->
@@ -27,13 +27,11 @@
                          </div>
                    </div> --}}
                    <div class="caja_tarjeta">
-                      <div class="col-sm-12">
-                        <p class="monto">Monto: $ @{{mipaquete.monto_dolar | number:2}} ( @{{mipaquete.tukis_paquete}} TUKIS )</p>
-                      </div>
+                      
                       <div class="col-sm-12">
                         <form class="form_pago form-horizontal" name="forma" ng-submit="enviarCompra()" >
                               <div class="form-group">
-                                <h3 class="info_user"><strong>Usuario </strong> @{{midato.info_usuario.alias}}</h3>
+                               
                                      <h3 class="info_user"><strong>Correo </strong> @{{midato.email}}</h3>
                               </div>
                               <div class="form-group">
