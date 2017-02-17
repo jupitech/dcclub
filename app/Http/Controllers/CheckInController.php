@@ -159,7 +159,7 @@ public function __construct() {
                           $body['secret'] = env('DONC_SECRET');
 
                           $client = new GuzzleHttpClient();
-                          $url = "http://donchamps.app/api/v1/checkin/create";
+                          $url = "https://devdonccscg.com/api/v1/checkin/create";
 
                           $response = $client->request("POST", $url,['form_params'=>$body]);
 
