@@ -140,7 +140,7 @@ public function __construct() {
 
                           $client = new GuzzleHttpClient();
                           //$url = "http://donchamps.app/api/v1/checkin/fail";
-                          $url = "https://doncampeon.club/api/v1/checkin/fail";
+                          $url = "https://devdonccscg.com/api/v1/checkin/fail";
 
                           $response = $client->request("POST", $url,['form_params'=>$body]);
 
