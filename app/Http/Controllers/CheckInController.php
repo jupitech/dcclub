@@ -37,7 +37,7 @@ public function __construct() {
      public function indexpaquete($paquete)
     {
           $devdonc= new GuzzleHttpClient();
-        //$apidev=$devdonc->request('GET', 'http://donchamps.app/api/v1/checkin/paquete/'.$paquete);
+      //$apidev=$devdonc->request('GET', 'http://donchamps.app/api/v1/checkin/paquete/'.$paquete);
          $apidev=$devdonc->request('GET', 'https://devdonccscg.com/api/v1/checkin/paquete/'.$paquete);
           $miconte=$apidev->getBody()->getContents();
           
@@ -59,7 +59,7 @@ public function __construct() {
       $currency='USD';
       $email='info@jupi.tech';
       $uip='45.55.212.97';
-      $phone = '50257401297';
+      $phone = $request['Phone'];
       $posturl = 'https://gateway.billpro.com';
       //Datos recibidos
         $FirstName=$request['FirstName'];
@@ -92,7 +92,7 @@ public function __construct() {
                               <Reference>'.$referencia.'</Reference>
                               <Amount>'.$amount.'</Amount>
                               <Currency>'.$currency.'</Currency>
-                              <Email>'.$email.'</Email>
+                              <Email>'.$Email.'</Email>
                               <IPAddress>'.$uip.'</IPAddress>
                               <Phone>'.$phone.'</Phone>
                               <FirstName>'.$FirstName.'</FirstName>
@@ -131,10 +131,41 @@ public function __construct() {
 
                   if(isset($responsecode)) {
                   if($responsecode != '100') { $status = "ERROR";
+
+                          $body['transaccion'] = json_decode($txid);
+                          $body['respuesta'] = json_decode($responsecode);
+                          $body['user_id'] = $request['iduser'];
+                          $body['id_paquete'] = $request['idpaquete'];
+                           $body['secret'] = env('DONC_SECRET');
+
+                          $client = new GuzzleHttpClient();
+                          $url = "http://donchamps.app/api/v1/checkin/fail";
+
+                          $response = $client->request("POST", $url,['form_params'=>$body]);
+
+
                       return response()->json(['codigo_respuesta' =>$responsecode,'descripcion' =>$msg,'referencia' =>$reference,'id_transaccion' =>$txid,'tiempo_respuesta' =>$processingtime, 'codigo_status' =>$statuscode,'descripcion_status' =>$statusdescription],400);
                  }
                   if($responsecode == '100') { $status = "SUCCESS"; 
-                     return response()->json(['codigo_respuesta' =>$responsecode,'descripcion' =>$msg,'referencia' =>$reference,'id_transaccion' =>$txid,'tiempo_respuesta' =>$processingtime, 'codigo_status' =>$statuscode,'descripcion_status' =>$statusdescription],200);
+
+
+
+                         $body['transaccion'] = json_decode($txid);
+                          $body['respuesta'] = json_decode($responsecode);
+                          $body['user_id'] = $request['iduser'];
+                          $body['id_paquete'] = $request['idpaquete'];
+                          $body['cantidad'] = $request['canti'];
+                          $body['secret'] = env('DONC_SECRET');
+
+                          $client = new GuzzleHttpClient();
+                          $url = "http://donchamps.app/api/v1/checkin/create";
+
+                          $response = $client->request("POST", $url,['form_params'=>$body]);
+
+                  //$response = $client->send($response);
+                          $res=json_decode($responsecode);
+
+                     return response()->json(['codigo_respuesta' =>$res,'descripcion' =>$msg,'referencia' =>$reference,'id_transaccion' =>$txid,'tiempo_respuesta' =>$processingtime, 'codigo_status' =>$statuscode,'descripcion_status' =>$statusdescription],200);
                    }
                   } else {
                   $status = "ERROR";
@@ -142,6 +173,8 @@ public function __construct() {
                     return response()->json(['ERROR' => $status],400);
                   }
 
+
+                //   return response()->json(['datos' =>  $response],200);
 
              
 

@@ -57,7 +57,20 @@ DCApp.filter('validacard', function () {
 });
 
 
-DCApp.controller('CheckinCtrl',function($location,$scope, $http, $timeout, $log,$uibModal){
+DCApp.controller('CheckinCtrl',function($window,$location,$scope, $http, $timeout, $log,$uibModal){
+
+
+     $scope.close = function() {
+     $window.close();
+    };
+
+   $window.onbeforeunload =  $scope.close;
+
+
+$scope.formulario_pago=true;
+$scope.respuesta_tarjeta=false;
+$scope.rechazada_tarjeta=false;
+
 	    $scope.api_token = $location.search().api_token;
 	    $scope.paquete_id = $location.search().paquete;
 	    console.log('Token:',$scope.api_token);
@@ -97,7 +110,7 @@ DCApp.controller('CheckinCtrl',function($location,$scope, $http, $timeout, $log,
             }).error(function(error) {
                  $scope.error = error;
             });  
-
+            $scope.usuario={};
       $scope.enviarCompra=function(){
       $notarjeta=$scope.usuario.notarjeta;
       $cvv=$scope.usuario.cvvtarjeta;
@@ -116,11 +129,15 @@ DCApp.controller('CheckinCtrl',function($location,$scope, $http, $timeout, $log,
               Email:$scope.midato.email,
               Address:$scope.midato.info_usuario.direccion,
               City:$scope.midato.info_usuario.ciudad,
+              Phone:$scope.midato.info_usuario.telefono,
               State:'XX',
               PostCode:'01001',
               CodEnvio: $enviotar,
               Referencia: ($scope.mipaquete.nombre_paquete+'-'+$scope.mipaquete.tukis_paquete+'_tukis'),
-              Amount:$scope.mipaquete.monto_dolar
+              Amount:$scope.mipaquete.monto_dolar,
+              iduser:  $scope.midato.id,
+              idpaquete: $scope.mipaquete.id,
+              canti: $scope.mipaquete.tukis_paquete
           };
           console.log(enviadata);
 
@@ -128,10 +145,19 @@ DCApp.controller('CheckinCtrl',function($location,$scope, $http, $timeout, $log,
                         .success(function (data, status, headers) {
                                 console.log("Datos enviados correctamente");
                                  $scope.midata=data;
+                                 $scope.formulario_pago=false;
+                                 $scope.respuesta_tarjeta=true;
                            })
                         .error(function (data, status, header, config) {
                             console.log("Parece que hay error al enviar los datos");
                               //  $scope.midata=data;
+                                 $scope.formulario_pago=false;
+                                 $scope.rechazada_tarjeta=true;
+
+                                 $scope.btn_intenta= function(){
+                                   $scope.formulario_pago=true;
+                                 $scope.rechazada_tarjeta=false;
+                                 }
                         });
 
       }    

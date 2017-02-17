@@ -5,7 +5,14 @@
 		      <div class="caja" ng-controller="CheckinCtrl" ng-cloak>
 
             <ul class="nav nav-tabs" role="tablist">
-              <li role="presentation" class="active"><a href="#comprar" aria-controls="comprar" role="tab" data-toggle="tab"> <p class="monto">Monto: $ @{{mipaquete.monto_dolar | number:2}} ( @{{mipaquete.tukis_paquete}} TUKIS )</p></a></li>
+              <li role="presentation" class="active">
+                   <span ng-click="close()" class="ico_atras"></span>
+                 <a aria-controls="comprar" role="tab" data-toggle="tab"> 
+                   
+                    <p class="monto">Monto: $ @{{mipaquete.monto_dolar | number:2}} ( @{{mipaquete.tukis_paquete}} TUKIS )</p>
+                </a>
+             
+              </li>
                 <!--
               <li role="presentation"><a href="#cobrar" aria-controls="cobrar" role="tab" data-toggle="tab">Cobrar</a></li>
                -->
@@ -28,7 +35,7 @@
                    </div> --}}
                    <div class="caja_tarjeta">
                       
-                      <div class="col-sm-12">
+                      <div class="col-sm-12" ng-if="formulario_pago">
                         <form class="form_pago form-horizontal" name="forma" ng-submit="enviarCompra()" >
                               <div class="form-group">
                                
@@ -154,10 +161,39 @@
                               <button type="submit" class="btn btn-default" ng-disabled="forma.$invalid">Comprar</button>
                               </div>
                             </form>
-                            <div class="col-sm-12 abajo_data">
-                              <p>Datos de respuesta: @{{midata}}</p>
-                            </div>
+                           <!--  <div class="col-sm-12 abajo_data">
+                             <p>Datos de respuesta: @{{midata}}</p>
+                           </div> -->
                       </div>
+
+                      {{-- Respuesta de tarjeta enviada --}}
+                      <div class="col-sm-12" ng-if="respuesta_tarjeta">
+                          {{-- Tarjeta aceptada --}}
+                          <div class="col-sm-12 caja_respuesta">
+                            <h3>Felicidades!</h3>
+                            <div class="ima_aceptada"></div>
+                            <h2>Ya tienes 25 TUKIS en tu cuenta.</h2>
+                            <h2>Tarjeta aceptada!</h2>
+                            <a href="" class="btn_regreso"><p>Regresar a</p> <span>Don Campeón</span></a>
+                          </div>
+                      </div>
+
+                       {{-- Respuesta de tarjeta rechazada --}}
+                      <div class="col-sm-12" ng-if="rechazada_tarjeta">
+                          {{-- Tarjeta aceptada --}}
+                          <div class="col-sm-12 caja_respuesta">
+                            <h3>Ups!</h3>
+                            <div class="ima_rechaza"></div>
+                            <h2>Tarjeta rechazada!</h2>
+                            <h2></h2>
+                            <a ng-click="btn_intenta()" class="btn_intentar"><p>Intentar </p> <span>Otra vez!</span></a>
+                              <a href="" class="btn_regreso"><p>Regresar a</p> <span>Don Campeón</span></a>
+                            
+                            
+                          </div>
+                      </div>
+
+
                    </div>
                    <div class="caja_footer">
                    	 <div class="col-xs-12 col-sm-12 spd spi">
@@ -181,6 +217,7 @@
 
 
 </div>
+
 @endsection
 @push('scripts')
     <script src="/js/script.js"></script>

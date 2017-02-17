@@ -87,14 +87,17 @@ body {
      }
   .caja .nav-tabs > li {
     float: left;
-    width: 100%; }
+    width: 100%; 
+    position: relative;
+  }
     .caja .nav-tabs > li a {
-      background: #f9f9f9 !important;
-      color: #333;
+      position: relative;
+      background: #1B3043;
+      color: #fff;
       margin: 0 !important;
       border-radius: 0 !important;
       letter-spacing: 0.03em;
-      font-size: 16px;
+      font-size: 15px;
       text-align: center;
       border-left: none !important;
       border-right: none !important;
@@ -107,9 +110,26 @@ body {
   border-left: none !important;
   border-right: none !important;
   border-top: none !important;
-  border-bottom: 2px solid #f3f3f3;
-  color: #333;
-  padding-top: 25px; }
+  color: #fff;
+  padding-top: 30px;
+
+   }
+
+   .ico_atras{
+   position: absolute !important;
+    width: 55px;
+    height: 30px;
+    top: 30px;
+    left: 0px;
+    background: url(img/ico_atras.svg) no-repeat 10px center !important;
+    background-size: 22px !important;
+    z-index: 800;
+   }
+   .ico_atras a{
+    float: left !important;
+    padding: 0 !important;
+    background: none !important;
+   }
 
 .caja_paquete {
   float: left;
@@ -146,6 +166,7 @@ body {
 .caja_tarjeta {
   float: left;
   width: 100%;
+  min-height:600px; 
   margin: 0 0 10px 0;
   margin-top: 55px;
   background: #f9f9f9;
@@ -191,6 +212,102 @@ body {
   display: none !important;
 }
 
+
+.caja_respuesta{
+  margin-top: 30px;
+
+}
+.caja_respuesta h3{
+  float: left;
+  width: 80%;
+  margin:5px 10%;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+.ima_aceptada{
+  float: left;
+  width: 100%;
+  height: 260px;
+  background: url('img/tukis.gif') no-repeat center;
+  background-size: 180px;
+}
+
+.ima_rechaza{
+  float: left;
+  width: 100%;
+  height: 200px;
+  background: url('img/credit-card.svg') no-repeat center;
+  background-size: 200px;
+}
+.caja_respuesta h2{
+  float: left;
+  width: 90%;
+  margin:5px 5%;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn_regreso{
+  margin-top: 15px;
+  border-radius: 10px;
+  float: left;
+  width: 100%;
+  padding:8px 15px 10px 15px;
+  background: #8DCA3D;
+  border-bottom: 3px solid #83ba35;
+}
+.btn_regreso p{
+  float: left;
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+.btn_regreso span{
+  float: left;
+  width: 100%;
+  margin: 0;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn_intentar{
+  margin-top: 15px;
+  border-radius: 10px;
+  float: left;
+  width: 100%;
+  padding:8px 15px 10px 15px;
+  background: #1399D3;
+  border-bottom: 3px solid #1081b2;
+}
+.btn_intentar p{
+  float: left;
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+.btn_intentar span{
+  float: left;
+  width: 100%;
+  margin: 0;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+
+
 .caja_footer {
   float: left;
   width: 100%; }
@@ -205,7 +322,7 @@ body {
 
 .monto {
   margin: 0;
-  text-align: center;
+  text-align: right;
   font-size: 18px;
   font-weight: bold; }
 
