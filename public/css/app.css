@@ -417,6 +417,54 @@ body {
     position: relative;
   }
 
+  .tipo_tarjetas{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .tipo_tarjetas ul{
+    padding: 0;
+    margin:0;
+    margin-right: 15px;
+    float: right;
+    width: 60%;
+    list-style: none;
+  }
+   .tipo_tarjetas li{
+    float: left;
+    width: 50%;
+   }
+
+   .ico_visa {
+    height: 30px;
+  background: url("img/t_visa.png") no-repeat center;
+  background-size: 40px; }
+
+.ico_mastercard {
+      height: 30px;
+  background: url("img/t_master.png") no-repeat center;
+  background-size: 40px; }
+
+  .direccion{
+    float: left;
+    width: 80%;
+    margin: 5px 10%;
+  }
+  .direccion h3{
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+    .direccion p{
+    font-size: 12px;
+    font-weight: normal;
+    color: #777;
+    text-align: center;
+     margin-bottom: 2px;
+  }
+
 @media (max-width: 467px) {
   .container {
     padding: 0 !important; }

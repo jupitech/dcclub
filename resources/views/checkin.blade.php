@@ -198,12 +198,27 @@
                    <div class="caja_footer">
                    	 <div class="col-xs-12 col-sm-12 spd spi">
 	                     <div class=" col-xs-6 col-sm-6 spd spi">
-	                       <h5>Políticas de Compra</h5>
+	                       <h5><a href="https://doncampeon.com/politicas-don-campeon/">Términos y Condiciones</a></h5>
 	                     </div>
 	                     <div class="col-xs-6 col-sm-6 spd spi">
-	                       <h5>Términos y Condiciones</h5>
+	                       <div class="tipo_tarjetas">
+                              <ul>
+                                 <li class="ico_visa"></li>
+                                  <li class="ico_mastercard"></li>
+                               </ul> 
+                         </div>
 	                     </div>
 	                   </div>
+                      
+                      {{-- Direcciones --}}
+                       <div class="col-xs-12 col-sm-12 spd spi">
+                          <div class="direccion">
+                            <h3>Jupiter International</h3>
+                            <p>71-75, Shelton Street, Covent Garden, London WC2H9JQ, England</p>
+                            <p>info@jupi.tech</p>
+                          </div>
+                        </div>
+
                    </div>
 	                  
                  </div>
