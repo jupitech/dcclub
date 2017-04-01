@@ -177,7 +177,9 @@ body {
     box-shadow: inset 0 1px 1px transparent;
     padding: 10px 5px !important;
     border-radius: 5px;
-    font-size: 17px; }
+    font-size: 17px; 
+    height: auto !important; 
+  }
   .caja_tarjeta label {
     margin-top: 8px; }
   .caja_tarjeta .btn-default {
@@ -400,7 +402,8 @@ body {
   color: #555;
   font-size: 17px;
   font-weight: normal;
-  padding: 6px 5px !important; }
+ /*  padding: 6px 5px !important; */
+   }
 
 .estilo_drop label {
   margin-top: 15px !important; }

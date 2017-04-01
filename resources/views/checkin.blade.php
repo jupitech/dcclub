@@ -64,8 +64,8 @@
                                   </div>
                               </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">Dirección</label>
-                                    <div class="col-sm-10 col-xs-10">
+                                    <label for="exampleInputPassword1" class="col-sm-3 col-xs-3">Dirección</label>
+                                    <div class="col-sm-9 col-xs-9">
                                     <input type="text" class="form-control" name="direccionU" ng-model="midato.info_usuario.direccion" placeholder="5 ave. 4-5" required>
                                     <div class="men_error" ng-show="forma.direccionU.$dirty && forma.direccionU.$invalid">
                                         <p>Requerido</p>
@@ -73,8 +73,8 @@
                                     </div>
                                </div>
                                <div class="form-group estilo_drop">
-                                    <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">País</label>
-                                    <div class="col-sm-10 col-xs-10">
+                                    <label for="exampleInputPassword1" class="col-sm-3 col-xs-3">País</label>
+                                    <div class="col-sm-9 col-xs-9">
                                     <ol class="nya-bs-select" ng-model="midato.info_usuario.pais" title="Selecciona un pais..." name="paisU"  data-live-search="true" >
                                             <li nya-bs-option="pais in paises" data-value="pais.pais">
                                               <a>
@@ -88,8 +88,8 @@
                                     </div>
                                </div>
                                 <div class="form-group ">
-                                    <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">Depto.</label>
-                                     <div class="col-sm-10 col-xs-10">
+                                    <label for="exampleInputPassword1" class="col-sm-3 col-xs-3">Ciudad</label>
+                                     <div class="col-sm-9 col-xs-9">
                                     <input type="text" class="form-control" name="ciudadU" ng-model="midato.info_usuario.ciudad" placeholder="Departamento/Ciudad" required>
                                     <div class="men_error" ng-show="forma.ciudadU.$dirty && forma.ciudadU.$invalid">
                                         <p>El campo es obligatorio.</p>
@@ -99,8 +99,8 @@
 
 
                               <div class="form-group">
-                                <label for="exampleInputPassword1" class="col-sm-2 col-xs-2">Teléfono</label>
-                                <div class="col-sm-10 col-xs-10">
+                                <label for="exampleInputPassword1" class="col-sm-3 col-xs-3">Teléfono</label>
+                                <div class="col-sm-9 col-xs-9">
                                 <input type="number" class="form-control" name="telefonoU" ng-model="midato.info_usuario.telefono" placeholder="55555555" required>
                                 <div class="men_error" ng-show="forma.telefonoU.$dirty && forma.telefonoU.$invalid">
                                     <p>El campo es obligatorio.</p>
@@ -111,8 +111,8 @@
                               
                               <div class="form-group">
                                  
-                                <label for="exampleInputPassword1" class="col-sm-2">N.Tarjeta</label>
-                                <div class="col-sm-10 posirela">
+                                <label for="exampleInputPassword1" class="col-sm-3 col-xs-3">No Tarjeta</label>
+                                <div class="col-sm-9 col-xs-9 posirela">
                                 <input type="text" class="form-control"  name="notarjetaU" ng-model="usuario.notarjeta" placeholder="**** **** **** ****" required minlength="16" maxlength="16" ng-maxlength="16" ng-pattern="/^[0-9]*$/">
                                       <div class="men_error" ng-show="forma.notarjetaU.$dirty && forma.notarjetaU.$invalid">
                                           <p>Requerido, Mínimo 16 números</p>
